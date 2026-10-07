@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Competition 2026</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #eef6ff;
+            color: #111827;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 7%;
+        }
+
+        .hero-container {
+            width: 100%;
+            max-width: 1080px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 70px;
+        }
+
+        .content {
+            width: 48%;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 11px;
+            margin-bottom: 14px;
+            border-radius: 20px;
+            background: #dbeafe;
+            color: #2563eb;
+            font-size: 8px;
+            font-weight: 700;
+            letter-spacing: .2px;
+        }
+
+        h1 {
+            font-size: 39px;
+            line-height: 1.08;
+            font-weight: 800;
+            margin-bottom: 14px;
+            letter-spacing: -1px;
+        }
+
+        h1 span {
+            color: #2964e4;
+        }
+
+        .description {
+            max-width: 390px;
+            color: #718096;
+            font-size: 11px;
+            line-height: 1.7;
+            margin-bottom: 18px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 16px;
+            background: #205bd8;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 700;
+            box-shadow: 0 4px 10px rgba(37, 99, 235, .2);
+        }
+
+        .visual {
+            width: 48%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .visual img {
+            width: 100%;
+            max-width: 440px;
+            display: block;
+            border-radius: 12px;
+            filter: drop-shadow(0 18px 22px rgba(15, 23, 42, .16));
+        }
+
+        .category-section {
+            min-height: 100vh;
+            background: #f8fafc;
+            padding: 70px 7%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .category-header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .category-label {
+            color: #2563eb;
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .category-header h2 {
+            font-size: 26px;
+            margin-bottom: 12px;
+            font-weight: 800;
+        }
+
+        .category-header p {
+            color: #718096;
+            font-size: 11px;
+        }
+
+        .category-container {
+            width: 100%;
+            max-width: 950px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .category-card {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 26px 19px 20px;
+            min-height: 280px;
+            transition: .25s ease;
+        }
+        .category-icon {
+            font-size: 27px;
+            margin-bottom: 13px;
+        }
+
+        .category-card h3 {
+            font-size: 15px;
+            margin-bottom: 8px;
+            color: #111827;
+        }
+
+        .category-card .level {
+            color: #2563eb;
+            font-size: 9px;
+            font-weight: 700;
+        }
+
+        .category-card p {
+            color: #718096;
+            font-size: 9px;
+            line-height: 1.65;
+            margin: 14px 0 10px;
+        }
+
+        .category-card ul {
+            list-style: none;
+            margin-bottom: 18px;
+        }
+
+        .category-card li {
+            position: relative;
+            padding-left: 14px;
+            margin-bottom: 7px;
+            color: #4b5563;
+            font-size: 9px;
+        }
+
+        .category-card li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #2563eb;
+            font-weight: 700;
+        }
+
+        .category-card a {
+            color: #2563eb;
+            text-decoration: none;
+            font-size: 9px;
+            font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 50px 25px;
+            }
+
+            .hero-container {
+                flex-direction: column;
+                gap: 45px;
+                text-align: center;
+            }
+
+            .content,
+            .visual {
+                width: 100%;
+            }
+
+            .description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            h1 {
+                font-size: 34px;
+            }
+
+            .visual img {
+                max-width: 420px;
+            }
+
+            .category-section {
+                padding: 60px 25px;
+            }
+
+            .category-container {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+            }
+
+            .category-card {
+                min-height: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="hero">
+        <div class="hero-container">
+
+            <div class="content">
+                <div class="badge">CODING COMPETITION 2026</div>
+
+                <h1>
+                    Tunjukkan<br>
+                    Kemampuanmu <span>Lewat<br>Coding!</span>
+                </h1>
+
+                <p class="description">
+                    Ajang kompetisi coding bagi pelajar untuk mengembangkan kreativitas,
+                    logika, dan kemampuan memecahkan masalah melalui teknologi.
+                </p>
+
+                <a href="#kategori" class="button">Daftar Sekarang</a>
+            </div>
+
+            <div class="visual">
+                <img src="gambar aset.png" alt="Coding">
+            </div>
+
+        </div>
+    </section>
+
+    <section class="category-section" id="kategori">
+
+        <div class="category-header">
+            <div class="category-label">KATEGORI LOMBA</div>
+
+            <h2>Pilih Jenjang Lomba</h2>
+
+            <p>
+                Ikuti kompetisi sesuai dengan jenjang pendidikanmu.
+            </p>
+        </div>
+
+        <div class="category-container">
+
+            <div class="category-card">
+                <div class="category-icon">🧒</div>
+
+                <h3>Tingkat SD</h3>
+
+                <span class="level">
+                    Coding Beginner
+                </span>
+
+                <p>
+                    Kompetisi coding dasar untuk siswa Sekolah
+                    Dasar dengan soal yang menyenangkan dan
+                    mudah dipahami.
+                </p>
+
+                <ul>
+                    <li>Logika dasar</li>
+                    <li>Algoritma sederhana</li>
+                    <li>Problem solving</li>
+                </ul>
+
+                <a href="#">
+                    Pilih Kategori →
+                </a>
+            </div>
+
+            <div class="category-card active">
+                <div class="category-icon">👨‍💻</div>
+
+                <h3>Tingkat SMP</h3>
+
+                <span class="level">
+                    Coding Intermediate
+                </span>
+
+                <p>
+                    Kompetisi coding dengan tantangan algoritma
+                    dan problem solving untuk siswa SMP.
+                </p>
+
+                <ul>
+                    <li>Algoritma</li>
+                    <li>Programming dasar</li>
+                    <li>Problem solving</li>
+                </ul>
+
+                <a href="#">
+                    Pilih Kategori →
+                </a>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">🧑‍💻</div>
+
+                <h3>Tingkat SMK</h3>
+
+                <span class="level">
+                    Coding Advanced
+                </span>
+
+                <p>
+                    Kompetisi programming untuk siswa SMK
+                    dengan tantangan yang lebih kompleks.
+                </p>
+
+                <ul>
+                    <li>Programming</li>
+                    <li>Algoritma</li>
+                    <li>Project challenge</li>
+                </ul>
+
+                <a href="#">
+                    Pilih Kategori →
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+</html>
